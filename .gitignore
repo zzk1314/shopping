@@ -1,0 +1,11 @@
+target/
+.project
+.classpath
+.settings
+*.iml
+/.idea/
+bin
+.gradle
+*.DS_Store
+classes/
+localconfig.conf

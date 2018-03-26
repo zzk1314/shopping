@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  web:
+    build: ./registration-webserver
+    image: nethunder/car-server:lastest
+    ports:
+      - "80:8080"
+    links:
+      - db:cardb
+    depends_on:
+      - db
+  db:
+    build: ./registration-database
+    image: nethunder/car-db:lastest
+    ports:
+      - "3310:3306"
+    volumes:
+      - car-mysql:/var/lib/mysql
+volumes:
+  car-mysql: {}
